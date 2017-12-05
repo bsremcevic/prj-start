@@ -44,6 +44,19 @@ export class RecipeService {
     //that way there is no way to get the original array from outside
   }
 
+  getRecipe(index: number){
+    console.log(this.recipes[index]);
+    return this.recipes[index]; //vraca recept iz niza sa indexom 'id'
+
+    // const server = this.recipes.find(
+    //   (s) => {
+    //     return s.id === id;
+    //   }
+    // );
+    // return server;
+
+  }
+
   addIngredientsToShoppingList(inigredients: Ingredient[]){
     this.slService.addIngredients(inigredients);
   }
