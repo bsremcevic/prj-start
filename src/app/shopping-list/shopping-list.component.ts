@@ -28,6 +28,10 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
       //we are subscribed to the event that will be emitted when the array is updated.
   }
 
+  onEditItem(index: number){
+    this.slService.startedEditing.next(index); //send the index so we could listen to it somewhere else...at shopping edit component
+  }
+
   ngOnDestroy(){
     this.subscription.unsubscribe();
   }
